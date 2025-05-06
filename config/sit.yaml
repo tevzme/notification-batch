@@ -1,0 +1,34 @@
+environment: "development"
+api_endpoints:
+  get_alert_setting: "http://localhost:8081/get_alert_setting"
+  send_notification: "http://localhost:8082/send_notification"
+  timeout: 3
+
+spending_alert:
+  ftp:
+    host: "ftp_host"
+    user: "ftp_user"
+    password: "ftp_password"
+    remote_path_send: "/spending_alert/send"
+    remote_path_result: "/spending_alert/result"
+    local_path: "/tmp/spending_alert"
+  schedule:
+    send_time: "08:00"
+    result_time: "22:00"
+  result_file_prefix: "spending_alert_result"
+
+e_ncb:
+  ftp:
+    host: "ftp_host"
+    user: "ftp_user"
+    password: "ftp_password"
+    remote_path_send: "/encb/send"
+    remote_path_result: "/encb/result"
+    local_path: "/tmp/encb"
+  schedule:
+    send_time: "10:00"
+    result_time: "18:00"
+  result_file_prefix: "encb_result"
+
+log_path: "./log"
+api_log_prefix: "api"
